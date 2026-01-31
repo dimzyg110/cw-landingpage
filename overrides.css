@@ -1,0 +1,515 @@
+/*
+  CWA Optimized Landing Layer
+  Purpose: make the archived WordPress/Elementor snapshot behave like a modern, high-converting landing page.
+  Strategy: show our #cwa-optimized layer and hide the old Elementor sections beneath.
+*/
+
+:root {
+  /* Theme variables (edit these to change the whole look quickly) */
+  /* Direction: LIGHT clinical + premium warmth (off-white) + fresh cannabis green accent */
+  --cwa-bg: #FBF7EF;      /* warm off-white */
+  --cwa-bg-2: #FFFEFB;    /* paper white */
+  --cwa-text: #141D18;    /* premium charcoal-green */
+  --cwa-muted: rgba(20, 29, 24, 0.72);
+  --cwa-border: rgba(20, 29, 24, 0.12);
+
+  /* Accent (premium pharmacy green) */
+  --cwa-accent: #2F6B3F;  /* primary forest green */
+  --cwa-accent-2: #245533;/* darker green for links/text */
+
+  /* Surfaces (cards) */
+  --cwa-surface: rgba(20, 29, 24, 0.03);
+  --cwa-surface-2: rgba(20, 29, 24, 0.055);
+
+  --cwa-shadow: 0 12px 30px rgba(20, 29, 24, 0.10);
+}
+
+/* Hide original content (we keep it in the file so nothing is lost) */
+body > .elementor,
+body > .skip-link,
+body > #content,
+body > div[data-elementor-type="header"],
+body > div[data-elementor-type="footer"] {
+  display: none !important;
+}
+
+/* Show our optimized layer */
+#cwa-optimized {
+  display: block !important;
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 500px at 18% 0%, color-mix(in srgb, var(--cwa-accent) 18%, transparent), transparent 55%),
+    radial-gradient(700px 380px at 90% 10%, color-mix(in srgb, var(--cwa-accent) 10%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--cwa-bg), var(--cwa-bg-2));
+  color: var(--cwa-text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Mobile sticky CTA bar */
+.cwa-mobile-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: none;
+  gap: 10px;
+  padding: 12px;
+  background: color-mix(in srgb, var(--cwa-bg-2) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--cwa-border);
+}
+
+.cwa-mobile-bar .cwa-btn {
+  flex: 1;
+}
+
+.cwa-container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* Header */
+.cwa-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--cwa-bg-2) 88%, transparent);
+  border-bottom: 1px solid var(--cwa-border);
+}
+
+.cwa-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.cwa-brand img {
+  display: block;
+  height: auto;
+}
+
+.cwa-nav {
+  display: flex;
+  gap: 14px;
+}
+
+.cwa-nav-link {
+  color: rgba(15, 26, 22, 0.70);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.cwa-nav-link:hover {
+  color: var(--cwa-text);
+}
+
+.cwa-header-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Buttons */
+.cwa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  line-height: 1;
+  letter-spacing: 0.2px;
+}
+
+/* Persona toggle pills */
+.cwa-persona {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 14px;
+  background: var(--cwa-surface-2);
+  border: 1px solid var(--cwa-border);
+  margin: 16px 0 0;
+}
+
+.cwa-pill {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--cwa-muted);
+  font-weight: 900;
+  font-size: 13px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.cwa-pill.is-active {
+  background: color-mix(in srgb, var(--cwa-accent) 14%, transparent);
+  border-color: color-mix(in srgb, var(--cwa-accent) 35%, transparent);
+  color: var(--cwa-accent-2);
+}
+
+.cwa-btn-primary {
+  background: var(--cwa-accent);
+  color: #FFFFFF;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--cwa-accent) 35%, transparent);
+}
+
+.cwa-btn-primary:hover { filter: brightness(0.95); }
+
+.cwa-btn-ghost {
+  background: transparent;
+  border-color: rgba(234, 242, 239, 0.32);
+  color: var(--cwa-text);
+}
+
+.cwa-btn-ghost:hover {
+  border-color: rgba(234, 242, 239, 0.55);
+}
+
+.cwa-btn-soft {
+  background: rgba(234, 242, 239, 0.10);
+  border-color: rgba(234, 242, 239, 0.10);
+  color: var(--cwa-text);
+}
+
+.cwa-btn-soft:hover { background: rgba(234, 242, 239, 0.14); }
+
+/* Hero */
+.cwa-hero {
+  padding: 54px 0 28px;
+}
+
+.cwa-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.cwa-eyebrow {
+  color: var(--cwa-accent-2);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.cwa-hero h1 {
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+
+.cwa-subhead {
+  color: var(--cwa-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cwa-hero-ctas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 18px 0 14px;
+}
+
+.cwa-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 10px;
+  color: var(--cwa-muted);
+}
+
+.cwa-checklist li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.cwa-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--cwa-accent);
+}
+
+.cwa-disclaimer {
+  margin-top: 16px;
+  font-size: 13px;
+  color: rgba(234, 242, 239, 0.62);
+}
+
+.cwa-proof-card {
+  background: var(--cwa-surface-2);
+  border: 1px solid var(--cwa-border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--cwa-shadow);
+}
+
+.cwa-proof-card h2 {
+  font-size: 16px;
+  margin: 0 0 6px;
+}
+
+.cwa-proof-card p {
+  margin: 0 0 14px;
+  color: var(--cwa-muted);
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.cwa-proof-logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.cwa-proof-logos img {
+  width: 100%;
+  height: 34px;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.05) brightness(1.1);
+  opacity: 0.9;
+}
+
+.cwa-proof-note {
+  margin-top: 10px !important;
+  font-size: 12px !important;
+  color: rgba(234, 242, 239, 0.55) !important;
+}
+
+/* Sections */
+.cwa-section {
+  padding: 42px 0;
+}
+
+.cwa-section-alt {
+  background: color-mix(in srgb, var(--cwa-accent) 4%, var(--cwa-bg-2));
+  border-top: 1px solid var(--cwa-border);
+  border-bottom: 1px solid var(--cwa-border);
+}
+
+.cwa-h2 {
+  margin: 0 0 18px;
+  font-size: 24px;
+}
+
+.cwa-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.cwa-step {
+  background: var(--cwa-surface);
+  border: 1px solid var(--cwa-border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.cwa-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  background: color-mix(in srgb, var(--cwa-accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cwa-accent) 35%, transparent);
+  color: var(--cwa-accent-2);
+  margin-bottom: 10px;
+}
+
+.cwa-step h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.cwa-step p {
+  margin: 0;
+  color: var(--cwa-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.cwa-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.cwa-commitments {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.cwa-commitment {
+  background: var(--cwa-surface);
+  border: 1px solid var(--cwa-border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.cwa-commitment h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.cwa-commitment p {
+  margin: 0;
+  color: var(--cwa-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.cwa-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.cwa-benefit {
+  background: var(--cwa-surface);
+  border: 1px solid var(--cwa-border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.cwa-benefit h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.cwa-benefit p {
+  margin: 0;
+  color: var(--cwa-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.cwa-callout {
+  margin-top: 18px;
+  background: color-mix(in srgb, var(--cwa-accent) 10%, var(--cwa-bg-2));
+  border: 1px solid color-mix(in srgb, var(--cwa-accent) 25%, transparent);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.cwa-callout h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.cwa-callout p {
+  margin: 0;
+  color: var(--cwa-text);
+  line-height: 1.55;
+}
+
+.cwa-inline-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.cwa-card {
+  background: var(--cwa-surface);
+  border: 1px solid var(--cwa-border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.cwa-card h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.cwa-card p {
+  margin: 0;
+  color: var(--cwa-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.cwa-final-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  background: var(--cwa-surface-2);
+  border: 1px solid var(--cwa-border);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.cwa-final-cta-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+.cwa-footer {
+  border-top: 1px solid var(--cwa-border);
+  padding: 22px 0 28px;
+}
+
+.cwa-footer p {
+  margin: 6px 0;
+}
+
+.cwa-footer-small {
+  color: rgba(234, 242, 239, 0.62);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cwa-footer-links a {
+  color: var(--cwa-accent-2);
+  text-decoration: none;
+}
+
+.cwa-footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .cwa-hero-grid { grid-template-columns: 1fr; }
+  .cwa-proof-logos { grid-template-columns: repeat(2, 1fr); }
+  .cwa-steps, .cwa-cards, .cwa-commitments, .cwa-benefits { grid-template-columns: 1fr; }
+  .cwa-nav { display: none; }
+  .cwa-header-inner { padding: 12px 0; }
+  .cwa-mobile-bar { display: flex; }
+  /* Prevent content being covered by mobile bar */
+  .cwa-footer { padding-bottom: 90px; }
+}
+
+@media (max-width: 1180px) {
+  .cwa-cards { grid-template-columns: repeat(2, 1fr); }
+}

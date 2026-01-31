@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Practical Pharmacy Use Cases | Cannabis Warehouse Australia</title>
+  <meta name="description" content="Practical pharmacy use cases for a pharmacy-first, regulator-resilient medicinal cannabis distribution model—workflow, continuity of supply, and patient affordability." />
+
+  <link rel="icon" href="/assets/web.archive.org/web/20251111015445im_/https_/cannabiswarehouse.com.au/wp-content/uploads/2022/10/favicon.png" sizes="32x32" />
+
+  <!-- Reuse the optimized landing styles -->
+  <link rel="stylesheet" href="/overrides.css" />
+
+  <style>
+    /* Page-specific styling for the use-cases article */
+    .cwa-page { padding: 38px 0 16px; }
+    .cwa-kicker { color: var(--cwa-accent-2); font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: 0.6px; margin: 0 0 10px; }
+    .cwa-h1 { font-size: clamp(28px, 3.2vw, 44px); line-height: 1.05; margin: 0 0 12px; }
+    .cwa-lede { color: var(--cwa-muted); font-size: 16px; line-height: 1.7; margin: 0; }
+    .cwa-who { margin-top: 12px; color: rgba(242, 250, 248, 0.78); font-size: 14px; line-height: 1.55; }
+    .cwa-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+    /* Sticky "Back to Pharmacy login" button (desktop/tablet). Mobile uses the sticky bottom bar. */
+    .cwa-sticky-login {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 80;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: var(--cwa-accent);
+      color: #06140D;
+      box-shadow: var(--cwa-shadow);
+    }
+    .cwa-sticky-login:hover { filter: brightness(0.95); }
+
+    .cwa-toc { margin-top: 18px; border: 1px solid var(--cwa-border); background: rgba(255,255,255,0.05); border-radius: 16px; padding: 14px; }
+    .cwa-toc a { color: var(--cwa-accent-2); text-decoration: none; font-weight: 800; }
+    .cwa-toc a:hover { text-decoration: underline; }
+    .cwa-toc ul { margin: 10px 0 0; padding-left: 18px; color: var(--cwa-muted); }
+
+    details.cwa-case { margin-top: 14px; border: 1px solid var(--cwa-border); background: rgba(255,255,255,0.05); border-radius: 16px; overflow: hidden; }
+    details.cwa-case > summary { cursor: pointer; list-style: none; padding: 14px 16px; font-weight: 900; display: flex; gap: 10px; align-items: center; }
+    details.cwa-case > summary::-webkit-details-marker { display: none; }
+    details.cwa-case[open] > summary { background: rgba(255,255,255,0.04); border-bottom: 1px solid var(--cwa-border); }
+    .cwa-case-body { padding: 14px 16px 16px; color: var(--cwa-muted); }
+    .cwa-case-body h3 { margin: 12px 0 6px; color: var(--cwa-text); font-size: 14px; letter-spacing: 0.2px; text-transform: uppercase; }
+    .cwa-case-body p { margin: 0 0 10px; line-height: 1.65; }
+    .cwa-case-body ul { margin: 0 0 10px; padding-left: 18px; }
+    .cwa-outcome { margin-top: 12px; padding: 12px; border-radius: 14px; background: rgba(49,195,125,0.10); border: 1px solid rgba(49,195,125,0.25); color: var(--cwa-text); }
+
+    .cwa-core { margin-top: 22px; padding: 16px; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid var(--cwa-border); }
+    .cwa-core h2 { margin: 0 0 8px; font-size: 18px; }
+    .cwa-core ul { margin: 10px 0 0; padding-left: 18px; color: var(--cwa-muted); }
+
+    @media (max-width: 980px) {
+      .cwa-page { padding-bottom: 86px; }
+      .cwa-sticky-login { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="cwa-optimized">
+    <a class="cwa-sticky-login" href="https://orders.cannabiswarehouse.com.au/login" aria-label="Back to pharmacy login">Pharmacy login</a>
+
+    <header class="cwa-header" role="banner">
+      <div class="cwa-container cwa-header-inner">
+        <a class="cwa-brand" href="/" aria-label="Cannabis Warehouse Australia">
+          <img src="/assets/web.archive.org/web/20251111015445im_/https_/cannabiswarehouse.com.au/wp-content/uploads/2022/05/cwa-logo-web-300x79.png" width="150" height="40" alt="Cannabis Warehouse Australia" />
+        </a>
+
+        <nav class="cwa-nav" aria-label="Primary">
+          <a class="cwa-nav-link" href="/">Home</a>
+          <a class="cwa-nav-link" href="/pharmacy-use-cases.html">Use cases</a>
+          <a class="cwa-nav-link" href="/compass-program.html">COMPASS</a>
+        </nav>
+
+        <div class="cwa-header-cta">
+          <a class="cwa-btn cwa-btn-primary" href="https://orders.cannabiswarehouse.com.au/login">Pharmacy login</a>
+          <a class="cwa-btn cwa-btn-ghost" href="https://orders.cannabiswarehouse.com.au/pharmacy-registration">Register pharmacy</a>
+          <a class="cwa-btn cwa-btn-soft" href="/book-a-call.html">Book a call</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="cwa-mobile-bar" role="navigation" aria-label="Quick actions">
+      <a class="cwa-btn cwa-btn-primary" href="https://orders.cannabiswarehouse.com.au/login">Pharmacy login</a>
+      <a class="cwa-btn cwa-btn-ghost" href="https://orders.cannabiswarehouse.com.au/pharmacy-registration">Register pharmacy</a>
+    </div>
+
+    <main class="cwa-page">
+      <div class="cwa-container">
+        <p class="cwa-kicker">Pharmacy partners</p>
+        <h1 class="cwa-h1">Practical Pharmacy Use Cases — Cannabis Warehouse Partnership in Action</h1>
+        <p class="cwa-lede">Cannabis Warehouse is designed to help pharmacies move beyond transactional dispensing and into a scalable, patient-first model of medicinal cannabis care. Below are practical use cases that illustrate how partner pharmacies can benefit operationally, clinically, and commercially—while supporting prescriber independence and regulator-resilient governance.</p>
+        <p class="cwa-who"><strong>Who this is for:</strong> pharmacy owners, dispensary managers, and teams building structured monthly pathways.</p>
+
+        <div class="cwa-actions">
+          <a class="cwa-btn cwa-btn-primary" href="https://orders.cannabiswarehouse.com.au/login">Pharmacy login</a>
+          <a class="cwa-btn cwa-btn-ghost" href="https://orders.cannabiswarehouse.com.au/pharmacy-registration">Register pharmacy</a>
+          <a class="cwa-btn cwa-btn-soft" href="/book-a-call.html">Book a call</a>
+        </div>
+
+        <div class="cwa-toc">
+          <strong>Quick navigation</strong>
+          <ul>
+            <li><a href="#case-1">Use case 1</a> — Bundled dispensing to reduce drop-off</li>
+            <li><a href="#case-2">Use case 2</a> — Demand rewards for high-performing pharmacies</li>
+            <li><a href="#case-3">Use case 3</a> — Continuity of supply and substitution control</li>
+            <li><a href="#case-4">Use case 4</a> — Road/workplace-safe pathways (where appropriate)</li>
+            <li><a href="#case-5">Use case 5</a> — Ethical prescriber networks</li>
+            <li><a href="#case-6">Use case 6</a> — Sponsor-neutral access without brand pressure</li>
+            <li><a href="#case-7">Use case 7</a> — Structured monthly care plans</li>
+            <li><a href="#case-8">Use case 8</a> — Pharmacy differentiation</li>
+          </ul>
+        </div>
+
+        <details id="case-1" class="cwa-case">
+          <summary>1) Reducing patient drop-off through bundled dispensing</summary>
+          <div class="cwa-case-body">
+            <h3>The problem</h3>
+            <p>Patients prescribed multiple products can face multiple dispensing events and fees, increasing monthly out-of-pocket cost and reducing adherence.</p>
+
+            <h3>Cannabis Warehouse use case</h3>
+            <p>A pharmacy supports a coordinated monthly bundle, for example:</p>
+            <ul>
+              <li>CBD oil for baseline support</li>
+              <li>Oral capsules for daytime function</li>
+              <li>Breakthrough inhaled option for symptom flares (where clinically appropriate)</li>
+            </ul>
+
+            <div class="cwa-outcome">
+              <strong>Outcome:</strong> fewer fragmented dispensing events, lower cost friction (where appropriate), and higher likelihood of repeat supply.
+            </div>
+          </div>
+        </details>
+
+        <details id="case-2" class="cwa-case">
+          <summary>2) Rewarding high-performing pharmacies with more repeat supply pathways</summary>
+          <div class="cwa-case-body">
+            <h3>The problem</h3>
+            <p>Many pharmacies provide excellent service but experience inconsistent script volume due to fragmented networks and variable supply performance.</p>
+
+            <h3>Cannabis Warehouse use case</h3>
+            <p>We’re designed to support pharmacies that demonstrate reliable supply performance and professional clinical service, including:</p>
+            <ul>
+              <li>reliable stock holding and forecasting</li>
+              <li>strong counselling and patient support</li>
+              <li>professional prescriber communication</li>
+            </ul>
+
+            <div class="cwa-outcome">
+              <strong>Outcome:</strong> repeat supply pathways can favour pharmacies that consistently deliver high-quality collaboration—rewarding service quality, not marketing spend.
+            </div>
+          </div>
+        </details>
+
+        <details id="case-3" class="cwa-case">
+          <summary>3) Preventing supply interruptions and substitution issues</summary>
+          <div class="cwa-case-body">
+            <h3>The problem</h3>
+            <p>Patients can experience disruption due to product shortages or substitutions that don’t align with prescriber intent.</p>
+
+            <h3>Cannabis Warehouse use case</h3>
+            <p>We support continuity via:</p>
+            <ul>
+              <li>multi-sponsor alternatives (where appropriate)</li>
+              <li>forward planning and stocking support</li>
+              <li>real-time responsiveness to supply issues</li>
+            </ul>
+
+            <div class="cwa-outcome">
+              <strong>Outcome:</strong> less churn, fewer complaints, and stronger patient trust.
+            </div>
+          </div>
+        </details>
+
+        <details id="case-4" class="cwa-case">
+          <summary>4) Supporting road-safe and workplace-safe pathways (where appropriate)</summary>
+          <div class="cwa-case-body">
+            <h3>The problem</h3>
+            <p>Some patients need symptom relief while also needing to manage driving or workplace constraints.</p>
+
+            <h3>Cannabis Warehouse use case</h3>
+            <p>Pharmacies can support structured regimens such as:</p>
+            <ul>
+              <li>high-CBD oils</li>
+              <li>balanced oral formats</li>
+              <li>lower-THC options where clinically appropriate</li>
+            </ul>
+
+            <div class="cwa-outcome">
+              <strong>Outcome:</strong> broader accessibility within real-world lifestyle constraints and safer care frameworks.
+            </div>
+          </div>
+        </details>
+
+        <details id="case-5" class="cwa-case">
+          <summary>5) Pharmacy participation in ethical prescriber networks</summary>
+          <div class="cwa-case-body">
+            <h3>The problem</h3>
+            <p>Prescribers often struggle to identify pharmacies that are consistent, professional, and clinically aligned.</p>
+
+            <h3>Cannabis Warehouse use case</h3>
+            <p>We help pharmacies participate in trusted networks by supporting:</p>
+            <ul>
+              <li>dispensing reliability</li>
+              <li>professional communication</li>
+              <li>repeat supply processes that reduce friction</li>
+            </ul>
+
+            <div class="cwa-outcome">
+              <strong>Outcome:</strong> pharmacies become trusted clinical infrastructure, not retail endpoints.
+            </div>
+          </div>
+        </details>
+
+        <details id="case-6" class="cwa-case">
+          <summary>6) Cross-sponsor ecosystems without brand pressure</summary>
+          <div class="cwa-case-body">
+            <h3>The problem</h3>
+            <p>Single-brand channel dominance can create regulatory exposure and conflicts-of-interest risk.</p>
+
+            <h3>Cannabis Warehouse use case</h3>
+            <p>Our model supports:</p>
+            <ul>
+              <li>sponsor neutrality</li>
+              <li>clinical logic across multiple sponsors</li>
+              <li>no exclusivity contracts</li>
+            </ul>
+
+            <div class="cwa-outcome">
+              <strong>Outcome:</strong> pharmacies operate safely in a regulator-aligned structure that supports prescriber independence.
+            </div>
+          </div>
+        </details>
+
+        <details id="case-7" class="cwa-case">
+          <summary>7) Streamlined monthly care plans for chronic patients</summary>
+          <div class="cwa-case-body">
+            <h3>The problem</h3>
+            <p>Chronic care patients often need predictable monthly access without repeated dispensing friction.</p>
+
+            <h3>Cannabis Warehouse use case</h3>
+            <p>Pharmacies can offer structured monthly pathways that support:</p>
+            <ul>
+              <li>consistent supply planning</li>
+              <li>consolidated dispensing events</li>
+              <li>fewer ordering events and improved forecasting</li>
+            </ul>
+
+            <div class="cwa-outcome">
+              <strong>Outcome:</strong> better workflow planning and improved pharmacy sustainability.
+            </div>
+          </div>
+        </details>
+
+        <details id="case-8" class="cwa-case">
+          <summary>8) A platform for pharmacy differentiation in cannabis care</summary>
+          <div class="cwa-case-body">
+            <h3>The problem</h3>
+            <p>As medicinal cannabis becomes more commoditised, pharmacies risk becoming interchangeable.</p>
+
+            <h3>Cannabis Warehouse use case</h3>
+            <p>Partner pharmacies can stand out by offering:</p>
+            <ul>
+              <li>coordinated supply pathways</li>
+              <li>patient affordability advantages (where appropriate)</li>
+              <li>ethical sponsor integration</li>
+              <li>temperature-controlled storage and transport (where required)</li>
+            </ul>
+
+            <div class="cwa-outcome">
+              <strong>Outcome:</strong> the pharmacy becomes a recognised centre of excellence—driven by service quality and outcomes-first culture.
+            </div>
+          </div>
+        </details>
+
+        <section class="cwa-core" aria-label="Core message">
+          <h2>Core message</h2>
+          <p><strong>Cannabis Warehouse is building Australia’s most pharmacy-aligned medicinal cannabis distribution system.</strong></p>
+          <ul>
+            <li>Patient affordability (where appropriate)</li>
+            <li>Prescriber independence</li>
+            <li>Sponsor-neutral collaboration</li>
+            <li>Reliable continuity of supply</li>
+            <li>Demand rewards for high-performing pharmacies</li>
+          </ul>
+          <p style="margin-top: 10px;"><strong>This is not just distribution. It is care-first infrastructure.</strong></p>
+        </section>
+
+        <section class="cwa-callout" aria-label="CTA">
+          <h3>Ready to explore the partnership?</h3>
+          <p>If your pharmacy wants to operate at the forefront of ethical, regulator-resilient cannabis dispensing, Cannabis Warehouse provides the model, logistics, and collaborative supply pathways to help lead the next standard of care.</p>
+          <div class="cwa-actions" style="margin-top: 12px;">
+            <a class="cwa-btn cwa-btn-primary" href="https://orders.cannabiswarehouse.com.au/login">Pharmacy login</a>
+            <a class="cwa-btn cwa-btn-ghost" href="https://orders.cannabiswarehouse.com.au/pharmacy-registration">Register pharmacy</a>
+            <a class="cwa-btn cwa-btn-soft" href="/book-a-call.html">Book a call</a>
+          </div>
+        </section>
+
+        <p class="cwa-disclaimer" style="margin-top: 16px;">For healthcare professionals and pharmacies only. Content is general information and not medical advice.</p>
+      </div>
+    </main>
+
+    <footer class="cwa-footer">
+      <div class="cwa-container">
+        <p><strong>Cannabis Warehouse Australia</strong></p>
+        <p class="cwa-footer-small">This page is intended for Australian healthcare professionals and pharmacies. Claims are general and depend on clinical appropriateness, prescriber decisions, patient circumstances, and location/logistics.</p>
+        <p class="cwa-footer-links"><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

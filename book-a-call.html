@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Call | Cannabis Warehouse Australia</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 40px 18px; background:#0b0b0b; color:#fff; }
+    .container { max-width: 920px; margin: 0 auto; }
+    a { color: #9ef0c2; }
+    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 22px; }
+    label { display:block; margin-top: 12px; font-size: 14px; opacity: 0.9; }
+    input, textarea { width:100%; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.18); background: rgba(0,0,0,0.25); color:#fff; }
+    button { margin-top: 14px; padding: 10px 14px; border-radius: 10px; border: 0; background: #31c37d; color: #06140d; font-weight: 700; cursor: pointer; }
+    .note { font-size: 13px; opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p><a href="/">← Back to home</a></p>
+    <div class="card">
+      <h1>Book a Discovery Call</h1>
+      <p class="note">Placeholder form (local only). Next we can connect this to Calendly or a real form endpoint.</p>
+
+      <form onsubmit="event.preventDefault(); alert('Thanks! This is a placeholder.');">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Your name" />
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@company.com" />
+
+        <label>Organisation</label>
+        <input type="text" name="org" placeholder="Clinic / Pharmacy / Supplier" />
+
+        <label>Message</label>
+        <textarea name="message" rows="5" placeholder="What are you looking to achieve?" ></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
